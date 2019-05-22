@@ -8,10 +8,10 @@
 <!-- Se determina la localizacion -->
 <div id='ubicacion'></div>
 <script type="text/javascript">
-if (navigator.geolocation) {
-	navigator .geolocation.getCurrentPosition (mostrarUbicacion);
+if (navigator.geolocation){
+	navigator .geolocation.getCurrentPosition  (mostrarUbicacion);
 } else {alert("¡Error! Este navegador no soporta la Geolocalizacion.");}
-function refrescarUbicacion() {
+function refrescarUbicacion(){
 	navigator.geolocation.watchPosition(mostrarUbicacion);}
 	</script>
     
@@ -20,7 +20,7 @@ function refrescarUbicacion() {
     <div id="mapholder"></div>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFd0aiE5FttY8XRAFI9ecTSpgo2vP-qMk"></script>
     
-    <button onclick="cargarmap()">Cargar mapa</button>
+    <button onclick="cargarmap()"> Cargar mapa </button>
     <script type="text/javascript">
 	var x=document.getElementById("demo");
 	function cargarmap(){
@@ -30,7 +30,7 @@ function refrescarUbicacion() {
 			lat=position.coords.Latitude;
 			lon=position.coords.Longitude;
 			latlon=new google.maps.LatLng(lat,lon)
-			mapholder =document .getElementById ('mapholder')
+			mapholder=document .getElementById ('mapholder')
 			mapholder.style.height ='500px';
 			mapholder.style.width ='750px';
 			var myOptions={
@@ -40,7 +40,7 @@ function refrescarUbicacion() {
 				navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL}
 			};
 			var map=new google.maps.Map(document.getElementById("mapholder"),myOptions);
-			var marker=new google.maps.Market({position:latlon,map:map,title:"You are here!"});
+			var marker=new google.maps.Marker({position:latlon,map:map,title:"You are here!"});
 		}
 		function showError(error)
 		{
